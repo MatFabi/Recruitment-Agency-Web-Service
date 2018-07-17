@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0; }
+
+.page-head {
+  padding-bottom: 105px;
+  background: url(../3.png) center;
+  background-size: cover; }
+
+.wrapper {
+  padding-bottom: 350px; }
+
+.topnav {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  position: fixed;
+  color: white;
+  font-family: roboto; }
+  .topnav__logo {
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 5px;
+    padding-bottom: 5px; }
+  .topnav__name {
+    font: "Lucida Sans Unicode", "Lucida Grande", sans-serif; }
+  .topnav__home-link {
+    text-decoration: none;
+    color: inherit; }
+  .topnav__list {
+    float: right;
+    list-style-type: none;
+    right: 0;
+    margin-right: 20px;
+    margin-top: 5px; }
+  .topnav__item {
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 5px; }
+    .topnav__item:hover {
+      background-color: white; }
+  .topnav__link {
+    color: white;
+    text-decoration: none; }
+    .topnav__link:hover {
+      color: black;
+      background-color: white; }
+
+/************************************************* ADS *************************************************/
+.layout {
+  margin: 10px 20px 10px 20px; }
+  .layout__welcome-message {
+    margin-top: 20px;
+    margin-left: 20px; }
+    .layout__welcome-message--big-size {
+      font-size: 40px; }
+
+.flex {
+  display: flex;
+  flex-wrap: wrap; }
+
+.ads {
+  flex: 3 1 300px;
+  margin-top: 10px; }
+
+.ad__item {
+  border-bottom: 1px solid gray;
+  list-style-type: none;
+  display: flex;
+  flex-flow: nowrap;
+  position: relative; }
+.ad__logo {
+  align-self: center; }
+.ad__wrapper {
+  flex: 1 1 auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 10px; }
+.ad__application-wrap {
+  position: relative;
+  flex: 1 1 auto;
+  align-self: flex-end; }
+.ad__job-position {
+  font-size: 1.3em;
+  margin-bottom: 5px; }
+.ad__company-name {
+  font-weight: 600;
+  font-size: 1em;
+  margin-bottom: 2px; }
+.ad__location {
+  margin-top: 5px;
+  color: gray;
+  font-size: 0.8em; }
+.ad__application-details {
+  flex: 0 0 120px;
+  justify-content: flex-end;
+  text-align: right;
+  align-self: flex-end; }
+.ad__application-form {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  width: 100px;
+  margin-bottom: 15px;
+  font-size: 0.9em; }
+  .ad__application-form--color-casestudy {
+    border: 2px solid #ffb827; }
+.ad__application-deadline {
+  margin-top: 5px;
+  font-size: 0.8em; }
+.ad__date {
+  color: gray; }
+
+.sidebar-frame {
+  flex: 1 0 150px;
+  border: 2px solid #ffb827;
+  max-height: 400px;
+  min-width: 320px;
+  margin-left: 20px; }
+  .sidebar-frame__header {
+    background-color: #ffb827;
+    color: black;
+    text-align: center;
+    padding: 10px; }
+
+.suggestions {
+  list-style-type: none; }
+  .suggestions__item {
+    margin: 10px 5px 0px 5px;
+    border-bottom: 1px solid #CDCDCD; }
+
+.legend {
+  margin-top: 20px; }
+  .legend__recruitment {
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+    margin-bottom: 20px;
+    font-size: 0.9em; }
+    .legend__recruitment--case-study {
+      border: 2px solid #ffb827; }
+  .legend__description {
+    display: inline-block; }
+
+.contact__details {
+  height: 80px;
+  background-color: #e5e5e5; }
+
+.copyright {
+  text-align: center; }
+
+/******************************** Announcement-form ******************************************************/
+.announcement-form__list {
+  list-style-type: none;
+  margin: 10px auto;
+  max-width: 400px;
+  padding: 20px 12px 10px 20px;
+  font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif; }
+.announcement-form__item {
+  padding: 0;
+  display: block;
+  list-style: none;
+  margin: 10px 0 0 0; }
+.announcement-form__label {
+  margin: 0 0 3px 0;
+  padding: 0px;
+  display: block;
+  font-weight: bold; }
+.announcement-form__input {
+  border: 1px solid #CDCDCD;
+  padding: 7px;
+  margin: 0px;
+  outline: none;
+  width: 100%; }
+
+.required {
+  color: red; }
+
+/***************************************** Announcement *************************************************/
+.announcement {
+  flex: 3 1 300px; }
+  .announcement__item {
+    margin-top: 10px;
+    width: 100%; }
+  .announcement__item-header {
+    margin-top: 10px; }
+  .announcement__header {
+    display: flex;
+    width: 100%; }
+    .announcement__header-content {
+      flex: 3 1 auto; }
+  .announcement__job-title--big-size {
+    font-size: 40px; }
+
+.btn {
+  width: 49%;
+  padding: 10px;
+  background-color: #9eaabe; }
+
+.submit-button {
+  background-color: #7994db; }
+
+.pop-up {
+  display: none;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1; }
+  .pop-up-content {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    transform: scale(0.8);
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 10px; }
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px; }
+  .close__item {
+    width: 18px;
+    font-size: 25px;
+    position: relative;
+    display: inline-block;
+    right: 0;
+    text-decoration: none; }
+
+@media (max-width: 880px) {
+  body {
+    font-size: 15px; }
+
+  .ads {
+    min-width: 100%; }
+
+  .sidebar-frame {
+    margin: 15px 0 0 0; } }
+
+/*# sourceMappingURL=style.css.map */
