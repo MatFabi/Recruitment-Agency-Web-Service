@@ -30,17 +30,72 @@ public class AnnouncementController {
 		
 		return "newad";
 	}
-	@GetMapping("/main")
+	@GetMapping(value="/main")
 	private String mainPage(Model theModel) {
-		int maxRecords = 0;
-		int recordPerPage=10;
+		int allRecords;
+		int lastPage;
+		int startPage=1;
 		
-		List<Announcement>  theAnnouncements = announcementService.getAnnouncements();		
-		maxRecords=theAnnouncements.size();
-		theModel.addAttribute("announcement", theAnnouncements);
-		theModel.addAttribute("maxRecords", maxRecords);
+		allRecords = announcementService.getRecordsNumber();		
+		if (allRecords%10 ==0){ 
+			lastPage=allRecords/10;
+		}
+		else if (allRecords>10) {
+			lastPage= (allRecords/10)+1;
+		}		
+		else {
+			lastPage=1;
+		}	
+		
+		System.out.println(allRecords +" " + lastPage+ " " + startPage);
+		List<Announcement>  theAnnouncements = announcementService.getAnnouncements();			
+		
+		theModel.addAttribute("announcement", theAnnouncements);	
+		theModel.addAttribute("lastPage", lastPage);
+		theModel.addAttribute("startPage", startPage);
+		
 		return "main";
+	}
+	
+	@GetMapping(value="/main", params="pageNo")
+	public String showPage(@RequestParam("pageNo") int pageNo, Model theModel) {
+		int allRecords;
+		int lastPage;
+		int startPage;
+		int currentPage= pageNo;
+		
+		allRecords = announcementService.getRecordsNumber();
+		
+		if (allRecords%10 ==0){ 
+			lastPage=allRecords/10;
+		}
+		else if (allRecords>10) {
+			lastPage= (allRecords/10)+1;
+		}		
+		else {
+			lastPage=1;
+		}
+		
+		if(lastPage>=1 && lastPage<10) {
+			startPage=1;
+		}
+		else if(lastPage>=10 && currentPage<7) {
+			lastPage=10;
+			startPage=1;
+		}else if(currentPage>=7 && lastPage>= currentPage+4) {
+			startPage=currentPage-5;
+			lastPage=currentPage+4;
+		} else {			
+			startPage=currentPage-9-(currentPage-lastPage);
+		}
 
+		List<Announcement>  theAnnouncements = announcementService.getAnnouncements(pageNo);	
+		theModel.addAttribute("announcement", theAnnouncements);
+		theModel.addAttribute("currentPageNo", pageNo);
+		theModel.addAttribute("lastPage", lastPage);
+		theModel.addAttribute("startPage", startPage);
+		
+		return "main";		
 	}
 	
 	@PostMapping("/saveAnnouncement")

@@ -37,4 +37,18 @@ public class AnnouncementServiceImpl implements AnnouncementService {
 		return announcementDAO.getAnnouncement(theId);
 	}
 
+	@Override
+	@Transactional
+	public List<Announcement> getAnnouncements(int pageNo) {
+		
+		return announcementDAO.getAnnouncements(pageNo);
+	}
+
+	@Override
+	@Transactional
+	public int getRecordsNumber() {
+	
+		return announcementDAO.getRecordsNumber();
+	}
+
 }

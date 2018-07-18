@@ -11,4 +11,8 @@ public interface AnnouncementService {
 	public void saveAnnouncement(Announcement theAnnouncement);
 
 	public Announcement getAnnouncement(int theId);
+
+	public List<Announcement> getAnnouncements(int pageNo);
+
+	public int getRecordsNumber();
 }

@@ -73,7 +73,13 @@
 							
 						</li>
 						
-					</c:forEach>				
+					</c:forEach>	
+					<c:forEach var="counter" begin="${startPage}" end="${lastPage}" >					
+						<c:url var="announcementPageSite" value="/announcement/main">
+							<c:param name="pageNo" value="${counter}" />						
+						</c:url>	
+						<a href=${announcementPageSite}>${counter} </a>
+					</c:forEach>			
 				</ul>
 			
 			<aside class="sidebar-frame">
@@ -105,8 +111,10 @@
 						<p><b>Twoja firma!</b> - <span> lokalizacja Twojej firmy!</span></p>
 					</li>
 				</ul>
+
 			</aside>
-			</div>			
+			</div>	
+	
 		</section>
 		<footer class="contact">
 			<div class="copyright">CareerTime 2018&copy;</div>

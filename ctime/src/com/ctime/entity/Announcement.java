@@ -45,8 +45,7 @@ public class Announcement {
 	public Announcement() {
 		
 	}
-	
-	
+		
 	public int getId() {
 		return id;
 	}

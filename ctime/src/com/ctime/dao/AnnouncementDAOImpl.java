@@ -33,6 +33,21 @@ public class AnnouncementDAOImpl implements AnnouncementDAO {
 		return announcements;
 
 	}
+	@Override
+	public List<Announcement> getAnnouncements(int pageNo) {
+		
+		//Get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		//create query
+		Query<Announcement> theQuery = 
+				currentSession.createQuery("from Announcement", Announcement.class);
+		//execute query and get result list
+		List<Announcement> announcements = theQuery.getResultList();
+		
+		//return the results		
+		return announcements;
+	}
 
 	@Override
 	public void saveAnnouncement(Announcement theAnnouncement) {
@@ -55,5 +70,13 @@ public class AnnouncementDAOImpl implements AnnouncementDAO {
 			
 		return theAnnouncement;
 	}
-
+	@Override
+	public int getRecordsNumber() {
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		int recordsNumber =
+				((Long) currentSession.createQuery("select count(*) from Announcement").uniqueResult()).intValue();
+		return recordsNumber;
+	}	
+	
 }
