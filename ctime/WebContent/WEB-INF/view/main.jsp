@@ -38,19 +38,27 @@
 			</div>
 			<div class="flex">
 				<ul class="ads">				
-					<c:forEach var="freshAnnouncements" items="${announcement}" >
+					<c:forEach var="freshAnnouncements" items="${announcement}" >					
+					<c:url var="announcementLink" value="/announcement/showJobOffer">
+						<c:param name="announcementId" value="${freshAnnouncements.id}" />
+					</c:url>
+					
 						<li class="ad__item">
+						
 							<div class="ad__logo">
 								<img width="100px" height="49px">
 							</div>
 							<div class="ad__wrapper">
 								<div class="ad__application-wrap">
+								
 									<h2 class="ad__job-position">
-										${freshAnnouncements.jobPosition}
+										<a href="${announcementLink}">
+											${freshAnnouncements.jobPosition}
+										</a>
 									</h2>
 									<h3 class="ad__company-name">
 										${freshAnnouncements.companyName}
-									</h3>
+									</h3>								
 									<p class="ad__location">
 										${freshAnnouncements.location}
 										</p>	
@@ -62,14 +70,16 @@
 										</p>
 									</div>
 							</div>
+							
 						</li>
+						
 					</c:forEach>				
 				</ul>
-
+			
 			<aside class="sidebar-frame">
 				<p class="sidebar-frame__header">Ostatnio dodane oferty</p>
 				<ul class="suggestions">
-					</li>
+			
 					<li class="suggestions__item">SEM  - marketing internetowy 
 						<div class="ad__application-form ad__application-form--color-casestudy">
 							Case Study
@@ -96,9 +106,9 @@
 					</li>
 				</ul>
 			</aside>
-			</div>
+			</div>			
 		</section>
-		<footer contact>
+		<footer class="contact">
 			<div class="copyright">CareerTime 2018&copy;</div>
 		</footer>
 

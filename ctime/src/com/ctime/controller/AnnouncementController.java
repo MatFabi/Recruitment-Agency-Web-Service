@@ -15,7 +15,6 @@ import com.ctime.entity.Announcement;
 import com.ctime.service.AnnouncementService;
 
 
-
 @Controller
 @RequestMapping("/announcement")
 public class AnnouncementController {
@@ -33,10 +32,15 @@ public class AnnouncementController {
 	}
 	@GetMapping("/main")
 	private String mainPage(Model theModel) {
-		List<Announcement>  theAnnouncements = announcementService.getAnnouncements();
-		theModel.addAttribute("announcement", theAnnouncements);
+		int maxRecords = 0;
+		int recordPerPage=10;
 		
+		List<Announcement>  theAnnouncements = announcementService.getAnnouncements();		
+		maxRecords=theAnnouncements.size();
+		theModel.addAttribute("announcement", theAnnouncements);
+		theModel.addAttribute("maxRecords", maxRecords);
 		return "main";
+
 	}
 	
 	@PostMapping("/saveAnnouncement")
@@ -44,5 +48,14 @@ public class AnnouncementController {
 		
 		announcementService.saveAnnouncement(theAnnouncement);
 		return "redirect:/announcement/new";
+	}
+	
+	@GetMapping("/showJobOffer")
+	public String showJobOffer (@RequestParam("announcementId") int theId, Model theModel) {
+	
+		Announcement theAnnouncement = announcementService.getAnnouncement(theId);		
+		theModel.addAttribute("announcement", theAnnouncement);
+		
+		return "company";
 	}
 }
