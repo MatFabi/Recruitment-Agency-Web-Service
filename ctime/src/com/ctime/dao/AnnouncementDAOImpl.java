@@ -20,52 +20,43 @@ public class AnnouncementDAOImpl implements AnnouncementDAO {
 	@Override
 	public List<Announcement> getAnnouncements() {
 		
-		//Get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
-		
-		//create query
 		Query<Announcement> theQuery = 
 				currentSession.createQuery("from Announcement", Announcement.class);
-		//execute query and get result list
+		theQuery.setMaxResults(10);
 		List<Announcement> announcements = theQuery.getResultList();
 		
-		//return the results		
+			
 		return announcements;
 
 	}
 	@Override
 	public List<Announcement> getAnnouncements(int pageNo) {
 		
-		//Get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
-		
-		//create query
 		Query<Announcement> theQuery = 
 				currentSession.createQuery("from Announcement", Announcement.class);
-		//execute query and get result list
-		List<Announcement> announcements = theQuery.getResultList();
+		theQuery.setFirstResult((pageNo>1?((pageNo-1)*10):1));
+		theQuery.setMaxResults(10);
+
 		
-		//return the results		
+		List<Announcement> announcements = theQuery.getResultList();		
 		return announcements;
 	}
 
 	@Override
 	public void saveAnnouncement(Announcement theAnnouncement) {
-		//get current hibernate session
 		
-		Session currentSession = sessionFactory.getCurrentSession();
 		
-		//save the customer..
+		Session currentSession = sessionFactory.getCurrentSession();				
 		currentSession.save(theAnnouncement);
 
 	}
 
 	@Override
 	public Announcement getAnnouncement(int theId) {
-		//get the current hibernate session
+		
 		Session currentSession = sessionFactory.getCurrentSession();
-				
-		// retrieve/read from db using the primary key
 		Announcement theAnnouncement = currentSession.get(Announcement.class, theId);
 			
 		return theAnnouncement;

@@ -15,7 +15,7 @@
 			<nav class="topnav">
 				<div class="topnav__logo">
 					<h2 class="topnav__name">
-						<a href="${pageContext.request.contextPath}/announcement/main" class="topnav__home-link">Career Time
+						<a href="${pageContext.request.contextPath}/main" class="topnav__home-link">Career Time
 					</h2>
 					<p class="topnav__signature">Portal niestandardowej rekrutacji</p></a>
 				</div>				

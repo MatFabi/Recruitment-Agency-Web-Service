@@ -1,1 +1,1 @@
-<% response.sendRedirect("announcement/main"); %>
+<% response.sendRedirect("/ctime/main"); %>

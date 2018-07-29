@@ -18,7 +18,7 @@
 				<div class="topnav__logo">
 					<h2 class="topnav__name">
 					
-						<a href="${pageContext.request.contextPath}/announcement/main"  class="topnav__home-link">Career Time
+						<a href="${pageContext.request.contextPath}/main"  class="topnav__home-link">Career Time
 					</h2>
 					<p class="topnav__signature">Portal niestandardowej rekrutacji</p></a>
 				</div>	
@@ -39,7 +39,7 @@
 			<div class="flex">
 				<ul class="ads">				
 					<c:forEach var="freshAnnouncements" items="${announcement}" >					
-					<c:url var="announcementLink" value="/announcement/showJobOffer">
+					<c:url var="announcementLink" value="/jobOffer">
 						<c:param name="announcementId" value="${freshAnnouncements.id}" />
 					</c:url>
 					
@@ -75,10 +75,10 @@
 						
 					</c:forEach>	
 					<c:forEach var="counter" begin="${startPage}" end="${lastPage}" >					
-						<c:url var="announcementPageSite" value="/announcement/main">
+						<c:url var="announcementPage" value="/main">
 							<c:param name="pageNo" value="${counter}" />						
 						</c:url>	
-						<a href=${announcementPageSite}>${counter} </a>
+						<a href=${announcementPage}>${counter} </a>
 					</c:forEach>			
 				</ul>
 			
