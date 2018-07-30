@@ -40,7 +40,7 @@
 				</li>			
 				<li class="announcement-form__item">
 					<label for="company-name" class="announcement-form__label">Nazwa firmy<span class="required" >*</span></label>
-					<form:input name="company-name" class="announcement-form__input" required="" path="companyName"/>
+					<form:input name="company--name" class="announcement-form__input" required="" path="companyName"/>
 				</li>
 				<li class="announcement-form__item">
 					<label for="location" class="announcement-form__label">lokalizacja<span class="required">*</span></label>
@@ -53,7 +53,7 @@
 				<li class="announcement-form__item">
 					<label for="about-company" class="announcement-form__label">Informacje o firmie </label>
 					<form:textarea name="about-company" class="announcement-form__input" path="companyAbout" />
-				</li>
+				</li> 
 				<li class="announcement-form__item">
 					<label for="about-position" class="announcement-form__label">Informacje o stanowisku<span class="required">*</span></label>
 					<form:textarea name="about-position" class="announcement-form__input" required="required" path="positionAbout" />
@@ -63,8 +63,8 @@
 					<form:textarea name="responsibilities" class="announcement-form__input" required="required" path="responsibilities" />
 				</li>
 				<li class="announcement-form__item">
-					<label for="demands" class="announcement-form__label" >Wymagania<span class="required">*</span></label>
-					<form:textarea name="demands" class="announcement-form__input" required="required" path="requirements" />
+					<label for="requirements" class="announcement-form__label" >Wymagania<span class="required">*</span></label>
+					<form:textarea name="requirements" class="announcement-form__input" required="required" path="requirements" />
 				</li>				
 				<input type="button" value="Podgląd" class="btn preview" id="klik" />
 				<input type="submit" value="Wyślij" class="btn submit-button">
@@ -100,7 +100,7 @@
 				<h3 class="announcement__item-header">Zakres obowiązków</h4>
 				<p class="announcement__responsibilities announcement__item"></p>
 				<h3 class="announcement__item-header">Wymagania</h4>
-				<p class="announcement__demands announcement__item"></p>
+				<p class="announcement__requirements announcement__item"></p>
 			</div>
 
 		</div>

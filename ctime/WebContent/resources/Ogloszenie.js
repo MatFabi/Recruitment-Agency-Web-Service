@@ -5,8 +5,8 @@ let announcementCompanyLocation = document.querySelector('.announcement__locatio
 let announcementCompanyWWW = document.querySelector('.announcement__www-address');
 let announcementCompanyAbout = document.querySelector('.announcement__about-company');
 let announcementPositionAbout = document.querySelector('.announcement__about-position');
-let announcementPositionResponsibilities = document.querySelector('.announcement__responsibilities');
-let announcementCandidateDemands = document.querySelector('.announcement__demands');
+let announcementResponsibilities = document.querySelector('.announcement__responsibilities');
+let announcementCandidateRequirements = document.querySelector('.announcement__requirements');
 
 
 let jobTitle =localStorage.getItem('jobPosition');
@@ -16,7 +16,7 @@ let companyWWW=localStorage.getItem('www');
 let companyAbout=localStorage.getItem('aboutCompany');
 let positionAbout=localStorage.getItem('aboutPosition');
 let responsibilities=localStorage.getItem('responsibilities');
-let candidateDemands=localStorage.getItem('demands');
+let candidateRequirements=localStorage.getItem('requirements');
 	if(localStorage.length!==0)
 {
 	if(jobTitle!=="")
@@ -32,9 +32,9 @@ announcementCompanyAbout.innerHTML=companyAbout;
 	if(positionAbout!=="")
 announcementPositionAbout.innerHTML=positionAbout;
 	if(responsibilities!=="")
-announcementPositionAbout.innerHTML=positionAbout;
-	if(candidateDemands!=="")
-announcementCandidateDemands.innerHTML=candidateDemands;
+announcementResponsibilities.innerHTML=responsibilities;
+	if(candidateRequirements!=="")
+announcementCandidateRequirements.innerHTML=candidateRequirements;
 }
 };
 document.querySelector('#klik').addEventListener('click', wywolaj);

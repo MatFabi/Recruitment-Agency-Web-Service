@@ -1,5 +1,5 @@
 
-function Announcement(jobPosition, companyName, jobLocation, www, aboutCompany, aboutPosition, responsibilities,demands){
+function Announcement(jobPosition, companyName, jobLocation, www, aboutCompany, aboutPosition, responsibilities,requirements){
 	this.jobPosition=jobPosition;
 	this.companyName=companyName;
 	this.jobLocation=jobLocation;
@@ -7,20 +7,20 @@ function Announcement(jobPosition, companyName, jobLocation, www, aboutCompany, 
 	this.aboutCompany=aboutCompany;
 	this.aboutPosition=aboutPosition;
 	this.responsibilities=responsibilities;
-	this.demands=demands;
+	this.requirements=requirements;
 }
 let previewBtn = document.querySelector('.preview');
 previewBtn.addEventListener('click', addAnnouncement, false);
 	function addAnnouncement(){
-		let	jobPosition=document.getElementsByName('job-position')[0].value;
-		let companyName=document.getElementsByName('company-name')[0].value;
+		let	jobPosition=document.getElementsByName('jobPosition')[0].value;
+		let companyName=document.getElementsByName('companyName')[0].value;
 		let	jobLocation=document.getElementsByName('location')[0].value;
 		let	www=document.getElementsByName('www')[0].value;
-		let	aboutCompany=document.getElementsByName('about-company')[0].value;
-		let	aboutPosition=document.getElementsByName('about-position')[0].value;
+		let	aboutCompany=document.getElementsByName('companyAbout')[0].value;
+		let	aboutPosition=document.getElementsByName('positionAbout')[0].value;
 		let	responsibilities=document.getElementsByName('responsibilities')[0].value;
-		let	demands=document.getElementsByName('demands')[0].value;
-			let dreamJob= new Announcement(jobPosition, companyName, jobLocation, www, aboutCompany, aboutPosition, responsibilities,demands);
+		let	requirements=document.getElementsByName('requirements')[0].value;
+			let dreamJob= new Announcement(jobPosition, companyName, jobLocation, www, aboutCompany, aboutPosition, responsibilities,requirements);
 				localStorage.setItem('jobPosition', dreamJob.jobPosition);
 				localStorage.setItem('companyName', dreamJob.companyName);
 				localStorage.setItem('jobLocation', dreamJob.jobLocation);
@@ -28,7 +28,7 @@ previewBtn.addEventListener('click', addAnnouncement, false);
 				localStorage.setItem('aboutCompany', dreamJob.aboutCompany);
 				localStorage.setItem('aboutPosition', dreamJob.aboutPosition);
 				localStorage.setItem('responsibilities', dreamJob.responsibilities);
-				localStorage.setItem('demands', dreamJob.demands);
+				localStorage.setItem('requirements', dreamJob.requirements);
 };
 
 	let inputs = document.getElementsByClassName('announcement-form__input');
